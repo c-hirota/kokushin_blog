@@ -1,0 +1,86 @@
+.top {
+  display: block;
+  width: 100%;
+}
+
+.top .top__image {
+  width: 100%;
+}
+
+.top .top__heading {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 3.375rem;
+  line-height: 3.375rem;
+  text-align: center;
+  -webkit-margin-after: 2rem;
+          margin-block-end: 2rem;
+}
+
+.top .top__paragraph {
+  margin: 0 auto 2.125rem;
+  width: 70%;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 170%;
+  text-align: center;
+}
+
+.top .top__line--pc {
+  width: 50%;
+  height: 0;
+  margin: 0 auto;
+  border-top: 2px solid black;
+}
+
+.sub .sub__header {
+  width: 100%;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2.75rem;
+  line-height: 3.25rem;
+  text-align: center;
+}
+
+.sub .sub__article--pc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.sub .sub__article--pc article {
+  width: 45%;
+  margin-bottom: 4rem;
+}
+
+.sub .sub__article--pc article a {
+  display: inline-block;
+}
+
+.sub .sub__article--pc article img {
+  width: 100%;
+}
+
+.sub .sub__article--pc article h4 {
+  margin: 20px auto 0px;
+  width: 84%;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 120%;
+  text-align: center;
+}
+
+.sub .sub__article--pc article h4:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+/*# sourceMappingURL=listing.css.map */

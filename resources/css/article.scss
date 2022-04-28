@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+.intro {
+    .intro__heading {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 3.375rem;
+        line-height: 100%;
+        text-align: center;
+    }
+
+    .intro__sub-heading {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.25rem;
+        line-height: 170%;
+        text-align: center;
+    }
+}
+
+.thumbnail {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+}
+
+.description {
+    display: flex;
+}
+
+.content__text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 170%;
+}
