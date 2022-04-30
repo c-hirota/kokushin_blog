@@ -18,21 +18,25 @@
             </nav>
         </div>    
     </header>
-    <main>
-        <div class="intro">
+    <div class="intro">
         <h1 class="intro__heading">A few words about this blog platform, Ghost, and how this site was made</h1>
         <p class="intro__sub-heading">Why Ghost (& Figma) instead of Medium, WordPress or other options?</p>
-        </div>
-        <img src="./resources/images/thumbnail_article.png" class="thumbnail">
+        <img src="./resources/images/thumbnail_article.png" class="intro__image">
+    </div>
+    <main>
         <div class="content">
-            <div class="class__description description">
-                <img src="./resources/images/author_article.png" class="description__avatar">
-                <p class="description__name_date">MIKA MATIKAINEN<br>Apr 15, 2020 · 4 min read</p>
-                <div class="description__button--facebook">
-                    <img src="./resources/images/facebook_logo.png">
+            <div class="content__description description">
+                <div class="desciprion__author_info author_info">
+                    <img src="./resources/images/author_article.png" class="author_info__avatar">
+                    <p class="author_info__name_date"><strong>MIKA MATIKAINEN</strong><br>Apr 15, 2020 · 4 min read</p>
                 </div>
-                <div class="description__button--twitter">
-                    <img src="./resources/images/twitter_logo.png">
+                <div class="description__button">
+                    <div class="description__button--facebook">
+                        <img src="./resources/images/facebook_logo.png">
+                    </div>
+                    <div class="description__button--twitter">
+                        <img src="./resources/images/twitter_logo.png">
+                    </div>
                 </div>
             </div>
             <div class="content__text">
@@ -41,10 +45,12 @@
                 <h2>Next on the pipeline</h2>
                 <p>Duis eu velit tempus erat egestas efficitur. In hac habitasse platea dictumst. Fusce a nunc eget ligula suscipit finibus. Aenean pharetra quis lacus at viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. </p>
                 <p>Morbi efficitur auctor metus, id mollis lorem pellentesque id. Nullam posuere maximus dui et fringilla. </p>
-                <figure class="content_photo">
-                    <img src="./resources/images/content_article.png">
-                    <figcaption>Image caption centered this way and I’ll make this a bit longer to indicate the amount of line-height. </figcaption>
-                </figure>
+            </div>
+            <figure class="content_photo">
+                <img src="./resources/images/content_article.png">
+                <figcaption>Image caption centered this way and I’ll make this a bit longer to indicate the amount of line-height. </figcaption>
+            </figure>
+            <div class="content__text">
                 <p>Aenean pharetra quis lacus at viverra. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam quis posuere ligula. </p>
                 <p>In eu dui molestie, molestie lectus eu, semper lectus. Proin at justo lacinia, auctor nisl et, consequat ante. Donec sit amet nisi arcu. Morbi efficitur auctor metus, id mollis lorem pellentesque id. Nullam posuere maximus dui et fringilla. Nulla non volutpat leo.</p>
                 <p>A list looks like this:</p>
@@ -75,9 +81,12 @@
                 <p class="author__text"><strong>Mika Matikainen</strong> is a Design Founder & Advisor, Berlin School of Creative Leadership Executive MBA participant, Zippie advisor, Wolt co-founder, and Nordic Rose stakeholder. </p>
             </div>
         </div>
+    </main>
         <div class="recommend">
-            <div class="recommend__line"></div>
-            <img src="./resources/images/eye_article.png" class="recommend_eye">
+            <div class="recommend__border_container">
+                <div class="recommend__line"></div>
+                <img src="./resources/images/eye_article.png" class="recommend__eye">
+            </div>
             <h2 class="recommend__heading">What to read next</h2>
             <div class="recommend__article-container article-container">
                 <article class="sub1">
@@ -118,14 +127,13 @@
             </div>
             </div>
             <div class="sign-up">
-                <h3>Sign up for the newsletter</h3>
+                <h2>Sign up for the newsletter</h2>
                 <p>If you want relevant updates occasionally, sign up for the private newsletter. Your email is never shared.</p>
                 <form class="sign-up__form">
                     <input type="text" name="email"  placeholder="Enter your email...">
                     <button type="submit">SIGN UP</button>
                 </form>
             </div>
-    </main>
 
     <footer class="footer">
         <div class="footer__container">
