@@ -1,28 +1,35 @@
+@mixin fontRoboto ($fWeight, $fSize, $lHeight, $Align) {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: $fWeight;
+    font-size: $fSize;
+    line-height: $lHeight;
+    text-align: $Align;
+}
+
+main {
+    width: 60vw;
+    padding-bottom: 150px;
+    margin: 0 auto;
+}
+
 .top {
     display: block;
     width: 100%;
     padding-top: 210px;
-    .top__image {
+    &__image {
         width: 100%;
     }
-    .top__heading {
-        font-style: normal;
-        font-weight: 700;
-        font-size: 3.375rem;
-        line-height: 3.375rem;
-        text-align: center;
+    &__heading {
+        @include fontRoboto(700, unquote('clamp(30px, 4vw, 54px)'), 54px, center);
         margin-block-end: 2rem;
     }
-    .top__paragraph {
+    &__paragraph {
         margin: 0 auto 2.125rem;
         width: 70%;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 1.25rem;
-        line-height: 170%;
-        text-align: center;
+        @include fontRoboto(400, 20px, 170%, center);
     }
-    .top__line--pc {
+    &__line {
         width: 50%;
         height: 0;
         margin: 0 auto;
@@ -31,39 +38,98 @@
 }
 
 .sub {
-    .sub__header {
+    &__header {
         width: 100%;
-        font-style: normal;
-        font-weight: 700;
-        font-size: 2.75rem;
-        line-height: 3.25rem;
-        text-align: center;
+        @include fontRoboto(700, 44px, 51.56px, center);
     }
-    .sub__article--pc {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-between;
-        article {
-            width: 45%;
-            margin-bottom: 4rem;
-            a {
-                display: inline-block;
+    &__article{
+        &--pc {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            article {
+                width: 45%;
+                margin-bottom: 4rem;
+                a {
+                    display: inline-block;
+                }
+                img{
+                    width: 100%;
+                }
+                h4{
+                    margin: 20px auto 0px;
+                    width: 84%;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 22px;
+                    line-height: 120%;
+                    text-align: center;
+                }
+                h4:hover {
+                    cursor: pointer;
+                    text-decoration: underline;
+                }
             }
-            img{
-                width: 100%;
+        }
+        &--sp {
+            display: none;
+        }
+    }
+}
+
+@media only screen and (max-width: 480px) {
+	main {
+        width: 100%;
+        padding-bottom: 40px;
+    }
+    .top {
+        padding-top: 117px;
+        &__heading {
+            margin: auto;
+            width: 90%;
+            @include fontRoboto(700, 36px, 42.19px, center);
+            margin-block-start: 2rem;
+            margin-block-end: 2rem;
+        }
+        &__paragraph {
+            @include fontRoboto(400, 16px, 27.2px, center);
+        }
+        &__line {
+            width: 100vw;
+        }
+    }
+
+    .sub {
+        &__heading {
+            @include fontRoboto(700, 32px, 37.5px, center);
+        }
+        &__article {
+            &--pc{
+                display: none;
             }
-            h4{
-                margin: 20px auto 0px;
-                width: 84%;
-                font-style: normal;
-                font-weight: 500;
-                font-size: 22px;
-                line-height: 120%;
-                text-align: center;
-            }
-            h4:hover {
-                cursor: pointer;
-                text-decoration: underline;
+            &--sp {
+                margin: 0 auto;
+                width: 89%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-flow: column nowrap;
+                article {
+                    width: 100%;
+                    margin-bottom: 42px;
+                }
+                h4 {
+                    margin: auto;
+                    @include fontRoboto(500, 22px, 26.4px, center);
+                    width: 78.2%;
+                }
+                img {
+                    margin-bottom: 20px;
+                    width: 100%;
+                }
+                a {
+                    display: inline-block;
+                }
             }
         }
     }

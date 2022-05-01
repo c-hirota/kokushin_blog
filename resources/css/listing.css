@@ -1,50 +1,59 @@
+main {
+  width: 60vw;
+  padding-bottom: 150px;
+  margin: 0 auto;
+}
+
 .top {
   display: block;
   width: 100%;
   padding-top: 210px;
 }
 
-.top .top__image {
+.top__image {
   width: 100%;
 }
 
-.top .top__heading {
+.top__heading {
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 3.375rem;
-  line-height: 3.375rem;
+  font-size: clamp(30px, 4vw, 54px);
+  line-height: 54px;
   text-align: center;
   -webkit-margin-after: 2rem;
           margin-block-end: 2rem;
 }
 
-.top .top__paragraph {
+.top__paragraph {
   margin: 0 auto 2.125rem;
   width: 70%;
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 1.25rem;
+  font-size: 20px;
   line-height: 170%;
   text-align: center;
 }
 
-.top .top__line--pc {
+.top__line {
   width: 50%;
   height: 0;
   margin: 0 auto;
   border-top: 2px solid black;
 }
 
-.sub .sub__header {
+.sub__header {
   width: 100%;
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 2.75rem;
-  line-height: 3.25rem;
+  font-size: 44px;
+  line-height: 51.56px;
   text-align: center;
 }
 
-.sub .sub__article--pc {
+.sub__article--pc {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -57,20 +66,20 @@
           justify-content: space-between;
 }
 
-.sub .sub__article--pc article {
+.sub__article--pc article {
   width: 45%;
   margin-bottom: 4rem;
 }
 
-.sub .sub__article--pc article a {
+.sub__article--pc article a {
   display: inline-block;
 }
 
-.sub .sub__article--pc article img {
+.sub__article--pc article img {
   width: 100%;
 }
 
-.sub .sub__article--pc article h4 {
+.sub__article--pc article h4 {
   margin: 20px auto 0px;
   width: 84%;
   font-style: normal;
@@ -80,8 +89,96 @@
   text-align: center;
 }
 
-.sub .sub__article--pc article h4:hover {
+.sub__article--pc article h4:hover {
   cursor: pointer;
   text-decoration: underline;
+}
+
+.sub__article--sp {
+  display: none;
+}
+
+@media only screen and (max-width: 480px) {
+  main {
+    width: 100%;
+    padding-bottom: 40px;
+  }
+  .top {
+    padding-top: 117px;
+  }
+  .top__heading {
+    margin: auto;
+    width: 90%;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 42.19px;
+    text-align: center;
+    -webkit-margin-before: 2rem;
+            margin-block-start: 2rem;
+    -webkit-margin-after: 2rem;
+            margin-block-end: 2rem;
+  }
+  .top__paragraph {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 27.2px;
+    text-align: center;
+  }
+  .top__line {
+    width: 100vw;
+  }
+  .sub__heading {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 37.5px;
+    text-align: center;
+  }
+  .sub__article--pc {
+    display: none;
+  }
+  .sub__article--sp {
+    margin: 0 auto;
+    width: 89%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+  }
+  .sub__article--sp article {
+    width: 100%;
+    margin-bottom: 42px;
+  }
+  .sub__article--sp h4 {
+    margin: auto;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 26.4px;
+    text-align: center;
+    width: 78.2%;
+  }
+  .sub__article--sp img {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  .sub__article--sp a {
+    display: inline-block;
+  }
 }
 /*# sourceMappingURL=listing.css.map */

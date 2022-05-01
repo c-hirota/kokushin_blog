@@ -1,22 +1,29 @@
 <!DOCTYPE html>
 <head>
     <title>A few words about this blog platform, Ghost, and how this site was made</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
     <link href="./resources/css/main.css" rel="stylesheet">
     <link href="./resources/css/article.css" rel="stylesheet">
 </head>
 <body>
-    <header class="header">
-        <div class="header__container">
-            <img src="./resources/images/logo.png" class="header__logo">
-            <nav class="header__nav">
-                <ul class="nav">
-                    <li class="nav__item"><a href="#">BLOG</a></li>
-                    <li class="nav__item"><a href="#">ABOUT</a></li>
-                    <li class="nav__item"><a href="#">LINKS</a></li>
-                    <li class="nav__item"><a href="#">PROJECTS</a></li>
+    <header class="header-pc">
+        <div class="header-container">
+            <img src="./resources/images/logo.png" class="header-container__logo">
+            <ul class="header-container__nav">
+                <li><a href="#">BLOG</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">LINKS</a></li>
+                <li><a href="#">PROJECTS</a></li>
                 </ul>
-            </nav>
         </div>    
+    </header>
+    <header class="header-sp">
+        <div class="header-container">
+            <img src="./resources/images/logo.png" class="header-container__logo">
+            <div class="header-container__hamburger">
+                <span></span>
+            </div>
+        </div>
     </header>
     <div class="intro">
         <h1 class="intro__heading">A few words about this blog platform, Ghost, and how this site was made</h1>
@@ -135,16 +142,16 @@
                 </form>
             </div>
 
-    <footer class="footer">
-        <div class="footer__container">
-        <img src="./resources/images/logo.png" class="footer__logo">
-        <p class="footer__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu velit tempus erat egestas efficitur. In hac habitasse platea dictumst. Fusce a nunc eget ligula suscipit finibus. </p>
-        <ul class="footer__links links">
-            <li class="links__item"><a href="https://twitter.com/">Twitter</a></li>
-            <li class="links__item"><a href="https://www.linkedin.com/">Linkedin</a></li>
-            <li class="links__item"><a href="#">RSS</a></li>
-        </ul>
-        <p class="footer__copyright">&copy;2012–2020 Nordic Rose Co.<br>All rights reserved. </p>
-        </div>
-    </footer>
+            <footer>
+                <div class="footer-container">
+                <img src="./resources/images/logo.png" class="footer-container__logo">
+                <p class="footer-container__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu velit tempus erat egestas efficitur. In hac habitasse platea dictumst. Fusce a nunc eget ligula suscipit finibus. </p>
+                <ul class="footer-container__links">
+                    <li><a href="https://twitter.com/">Twitter</a></li>
+                    <li><a href="https://www.linkedin.com/">Linkedin</a></li>
+                    <li><a href="#">RSS</a></li>
+                </ul>
+                <p class="footer-container__copyright">&copy;2012–2020 Nordic Rose Co.<br>All rights reserved. </p>
+                </div>
+            </footer>
 </body>
