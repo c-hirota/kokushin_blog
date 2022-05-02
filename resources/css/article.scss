@@ -49,6 +49,7 @@ $border_gray: #EAEAEA;
 
 main {
     width: 60vw;
+    padding-top: 32px;
     padding-bottom: 150px;
     margin: 0 auto;
 }
@@ -169,16 +170,18 @@ main {
 
 .content__share--pc {
     display: flex;
+    border: 1px solid $border_gray;
 }
 
 .share {
-    width: 100%;
+    width: 75%;
+    margin: 0 auto;
     border-radius: 4px;
     .share__facebook {
         @include flexCenter;
         width: 50%;
         height: 100%;
-        border-right: 1px solid #EAEAEA;
+        border-right: 1px solid $border_gray;
         img {
             margin-right: 16px;
             height: 20px;
@@ -204,6 +207,8 @@ main {
 }
 
 .tags {
+    width: 75%;
+    margin: 0 auto;
     text-align: left;
     margin-block-start: 2rem;
     margin-block-end: 2rem;
@@ -213,6 +218,8 @@ main {
 }
 
 .author {
+    width: 75%;
+    margin: 0 auto;
     display: flex;
     align-items: center;
     border-top: 1px dotted black;
