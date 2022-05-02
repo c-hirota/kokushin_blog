@@ -21,10 +21,6 @@
     text-align: $Align;
 }
 
-* {
-    border: 1px solid red;
-}
-
 body{
     box-sizing: border-box;
     background-color: white;
@@ -87,11 +83,12 @@ ul {
         }
         li:hover{
             cursor: pointer;
+            color: black;
         }
         li::after {
             position: absolute;
             left: 0;
-            bottom: -44px;
+            bottom: -50px;
             width: 100%;
             content: '';
             height: 2px;

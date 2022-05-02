@@ -10,6 +10,11 @@ main {
   padding-top: 210px;
 }
 
+.top a:hover {
+  color: black;
+  cursor: pointer;
+}
+
 .top__image {
   width: 100%;
 }

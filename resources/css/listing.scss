@@ -17,6 +17,11 @@ main {
     display: block;
     width: 100%;
     padding-top: 210px;
+
+    a:hover {
+        color: black;
+        cursor: pointer;
+    }
     &__image {
         width: 100%;
     }

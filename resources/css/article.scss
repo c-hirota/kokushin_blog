@@ -1,3 +1,9 @@
+br {
+    display: block;
+    margin: 8px 0px;
+    content: "";
+}
+
 @mixin mainBlock {
     max-width: 75%;
     margin: 0 auto;
@@ -24,19 +30,19 @@ $border_gray: #EAEAEA;
 .intro {
     width: 100%;
     padding-top: 186px;
-    .intro__heading {
+    &__heading {
         max-width: 60%;
-        @include fontRoboto(700, 3.375rem, 100%, center);
+        @include fontRoboto(700, 54px, 100%, center);
         margin: 0 auto;
     }
 
-    .intro__sub-heading {
-        @include fontRoboto(400,1.25rem,170%,center);
+    &__sub-heading {
+        @include fontRoboto(400, 20px, 170%, center);
         margin: 32px auto;
         max-width: 44%;
     }
 
-    .intro__image {
+    &__image {
         width: 100%;
     }
 }
@@ -53,33 +59,30 @@ main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    .author_info {
+    flex-wrap: wrap;
+    &__author_info, .author_info {
         display: flex;
-        justify-content: left;
-        .author_info__avatar {
+        justify-content: flex-start;
+        &__avatar {
             margin-top: 24px;
             width: 56px;
             height: 56px;
         }
-        .author_info__name_date {
+        &__name_date {
             font-family: -apple-system, 'BlinkMacSystemFont', Sans-Serif;
             text-align: left;
             margin: 30px 0px 30px 16px;
             font-size: 1rem;
             line-height: 19px;
             letter-spacing: 0.05em;
-            br {
-                display: block;
-                margin: 4px 0px;
-                content: "";
-            }
             strong {
                 font-weight: 700;
                 text-transform: uppercase;
             }
         }
     }
-    .description__button {
+
+    &__button {
         display: flex;
         justify-content: space-around;
         align-items: center;
@@ -87,7 +90,7 @@ main {
         border: 1px solid $border_gray;
         width: 140px;
         height: 44px;
-        .description__button--facebook {
+        &--facebook {
             width: 50%;
             height: 100%;
             border-right: 1px solid $border_gray;
@@ -97,7 +100,7 @@ main {
                 margin: 12px 25px;
             }
         }
-        .description__button--twitter {
+        &--twitter {
             width: 50%;
             height: 100%;
             img {
@@ -106,10 +109,13 @@ main {
                 margin: 14px 25px;
             }
         }
+        &--whatsapp {
+            display: none;
+        }
     }
 }
 
-.content__text {
+.content__text--pc {
     @include mainBlock;
     p {
         @include fontRoboto(400, 1.25rem, 170%, left);
@@ -139,7 +145,11 @@ main {
     }
 }
 
-.content_photo {
+.content__text--sp {
+    display: none;
+}
+
+.content__photo {
     width: 100%;
     margin: 52px 0px;
     img {
@@ -153,10 +163,16 @@ main {
     }
 }
 
-.share {
-    @include mainBlock;
+.content__share--sp {
+    display: none;
+}
+
+.content__share--pc {
     display: flex;
-    border: 1px solid #EAEAEA;
+}
+
+.share {
+    width: 100%;
     border-radius: 4px;
     .share__facebook {
         @include flexCenter;
@@ -188,7 +204,6 @@ main {
 }
 
 .tags {
-    @include mainBlock;
     text-align: left;
     margin-block-start: 2rem;
     margin-block-end: 2rem;
@@ -198,13 +213,12 @@ main {
 }
 
 .author {
-    @include mainBlock;
     display: flex;
     align-items: center;
     border-top: 1px dotted black;
     .author__avatar {
-        width: 56px;
-        height: 56px;
+        width: 70px;
+        height: 70px;
         margin-right: 24px;
     }
     .author__text {
@@ -213,35 +227,42 @@ main {
 }
 
 .recommend {
-    .recommend__border_container {
+    &__border_container {
         position: relative;
-        .recommend__eye {
+        height: 65px;
+        width: 100%;
+        img {
+            display: block;
             position: absolute;
-            left: 50%;
-            width: 82px;
-            height: 64.29px;
-            display: float;
-        }
-        .recommend__line {
-            position: absolute;
-            height: 50%;
-            width: 100vw;
-            position: relative;
+            top: 0;
             left: 50%;
             transform: translateX(-50%);
-            border-top: $black_line;
+            width: 82px;
+            height: 64.29px;
+            z-index: 5;
+        }
+        hr {
+            position: absolute;
+            width: 100%;
+            top: 30%;
+            border-color: black;
         }
     }
-    .article-container {
+
+    &__heading {
+        @include fontRoboto(700, 44px, 52px, center);
+    }
+
+    &__article-container {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: flex-start;
         margin: 0 auto;
         flex-flow: row wrap;
         width: 68%;
         article {
             width: 304px;
-            margin: 17px 7px;
+            margin: 17px 14px;
             img {
                 width: 100%;
             }
@@ -283,7 +304,7 @@ main {
             border: 1px solid black;
         }
         input::placeholder {
-            font-family: 'SF Pro text', sans-serif;
+            font-family: -apple-system, 'BlinkMacSystemFont', Sans-Serif;
             font-weight: 400;
             font-size: 20px;
             line-height: 23.87px;
@@ -295,7 +316,7 @@ main {
             height: 100%;
             background-color: black;
             color: white;
-            font-family: 'SF Pro text', sans-serif;
+            font-family: -apple-system, 'BlinkMacSystemFont', Sans-Serif;
             font-size: 20px;
             line-height: 24px;
             text-align: center;
@@ -307,8 +328,196 @@ main {
 
 @media only screen and (max-width: 480px) {
     main {
-        width: 100%;
+        width: 90%;
         margin-top: 32px;
+        padding-bottom: 59px;
+    }
+
+    .intro {
+        padding-top: 117px;
+        &__heading {
+            max-width: 90%;
+            @include fontRoboto(700, 36px, 42px, center);
+            margin: 0 auto;
+        }
+    
+        &__sub-heading {
+            @include fontRoboto(400, 16px, 170%, center);
+            margin: 28px auto;
+        }
+    }
+
+    .description {
+        max-width: 100%;
+        margin: 0px auto;
+        display: block;
+        .author_info {
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            .author_info__name_date {
+                @include fontRoboto(400, 13px, 15px, left);
+                margin: 30px 0px 30px 16px;
+            }
+        }
+        
+        &__button {
+            display: flex;
+            width: 100%;
+            height: 54px;
+            &--facebook {
+                width: 33%;
+                height: 100%;
+                border-right: 1px solid $border_gray;
+                img {
+                    width: 20px;
+                    height: 20px;
+                    margin: 17px auto;
+                }
+            }
+            &--twitter {
+                width: 33%;
+                height: 100%;
+                border-right: 1px solid $border_gray;
+                img {
+                    width: 20px;
+                    height: 16px;
+                    margin: 19px auto;
+                }
+            }
+            &--whatsapp {
+                display: block;
+                width: 33%;
+                height: 100%;
+                img {
+                    width: 20px;
+                    height: 20px;
+                    margin: 17px auto;
+                }
+            }
+        }
+    }
+
+    .content {
+        &__text--sp {
+            width: 100%;
+            margin: 0 auto;
+            display: block;
+            p {
+                @include fontRoboto(400, 16px, 27.2px, left);
+            }
+        
+            h2 {
+                @include fontRoboto(700, 26px, 30px, left);
+            }
+        }
+    
+        &__text--pc {
+            display: none;
+        }
+
+        &__photo {
+            left: 0;
+            margin: 42px auto;
+            img {
+                position: relative;
+                transform: translateX(-5%);
+                width: 100vw;
+            }
+            figcaption {
+                width: 100%;
+                @include fontRoboto(500, 16px, 18.2px, center);
+            }
+        }
+        &__share--pc {
+            display: none;
+        }
+        &__share--sp {
+            display: block;
+        }
+    }
+
+    .share {
+        width: 100%;
+        p {
+            @include fontRoboto(500, 14px, 16.41px, left);
+        }
+        &__botton {
+            display: flex;
+            border: 1px solid $border_gray;
+            width: 100%;
+            height: 54px;
+            &--facebook {
+                width: 33%;
+                height: 100%;
+                border-right: 1px solid $border_gray;
+                img {
+                    width: 20px;
+                    height: 20px;
+                    margin: 17px auto;
+                }
+            }
+            &--twitter {
+                width: 33%;
+                height: 100%;
+                border-right: 1px solid $border_gray;
+                img {
+                    width: 20px;
+                    height: 16px;
+                    margin: 19px auto;
+                }
+            }
+            &--whatsapp {
+                display: block;
+                width: 33%;
+                height: 100%;
+                img {
+                    width: 20px;
+                    height: 20px;
+                    margin: 17px auto;
+                }
+            }
+        }
+    }
+    .author {
+        display: block;
+        .author__avatar {
+            float: left;
+            margin: 28px 16px 0px 0px;
+        }
+        .author__text {
+            @include fontRoboto(400, 16px, 160%, left);
+            margin-block-start: 24px;
+            margin-block-end: 0px;
+        }
+    }
+
+    .recommend__article-container {
+        .sp {
+            display: none;
+        }
+    }
+
+    .sign-up {
+        width: 100%;
+        h2 {
+            width: 249px;
+            margin: 0 auto;
+            margin-block-start: 42px;
+            @include fontRoboto(700, 29px, 29px, center);
+        }
+        p {
+            margin: 0 auto;
+            width: 306px;
+            @include fontRoboto(400, 16px, 22.4px, center);
+            margin-block-start: 14px;
+            margin-block-end: 33px;
+        }
+        form {
+            width: 80%;
+            button {
+                @include fontRoboto(700, 16px, 18.75px, center);
+            }
+        }
     }
 }
-
